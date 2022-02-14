@@ -14,6 +14,8 @@ def before_scenario(context, scenario):
 
 
 def before_step(context, step):
+    context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    context.driver.execute_script("return document.readyState == 'complete';")
     print('\nStarted step: ', step)
 
 
